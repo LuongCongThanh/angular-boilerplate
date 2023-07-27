@@ -52,11 +52,11 @@
     "typescript": "~4.9.4"
   },
   "lint-staged": {
-    "src/**/*.{js,ts,html,css,scss}": ["npx lint", "npx format"]
+    "src/**/*.{js,ts,html,css,scss}": ["npm run lint", "npm run format", "git add"]
   },
   "husky": {
     "hooks": {
-      "pre-commit": "echo \"Linting and formatting code...\" && lint-staged && npm run lint && npm run format"
+      "pre-commit": "lint-staged"
     }
   }
 }
