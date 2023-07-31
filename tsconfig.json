@@ -26,6 +26,7 @@
     ],
     "paths": {
       "@core/*": ["src/app/core/*"],
+      "@layout/*": ["src/app/core/layout/*"],
       "@shared/*": ["src/app/shared/*"],
       "@env/*": ["src/environments/*"],
       "@assets/*": ["src/assets/*"],
