@@ -5,6 +5,6 @@ import { MainLayoutComponent } from '@layout/main-layout/main-layout.component';
   declarations: [MainLayoutComponent],
   imports: [],
   exports: [],
-  providers: [],
+  providers: []
 })
 export class LayoutModule {}
