@@ -7,10 +7,21 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { LayoutModule } from '@layout/layout.module';
+import { AuthenModule } from '@feature/authen/authen.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, CommonModule, HttpClientModule, RouterModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    CommonModule,
+    HttpClientModule,
+    RouterModule,
+    AppRoutingModule,
+    LayoutModule,
+    AuthenModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

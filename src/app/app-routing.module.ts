@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PrimaryLayoutComponent } from '@layout/primary-layout/primary-layout.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'auth', pathMatch: 'full' }
-  // {
-  //   path: 'auth',
-  //   component: PrimaryLayoutComponent,
-  //   loadChildren: () => import('./core/auth/auth.module').then(m => m.AuthModule)
-  // },
+  { path: '', redirectTo: 'auth', pathMatch: 'full' },
+  {
+    path: 'auth',
+    component: PrimaryLayoutComponent,
+    loadChildren: () => import('./feature/authen/authen.module').then(m => m.AuthenModule)
+  }
   // {
   //   path: 'admin',
   //   component: MainLayoutComponent,
