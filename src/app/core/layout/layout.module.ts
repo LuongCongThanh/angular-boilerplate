@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 
 import { MainLayoutComponent } from '@layout/main-layout/main-layout.component';
 import { PrimaryLayoutComponent } from './primary-layout/primary-layout.component';
+import { LayoutService } from '@core/service/layout.service';
 
 @NgModule({
   declarations: [MainLayoutComponent, PrimaryLayoutComponent],
   imports: [CommonModule, RouterModule],
   exports: [],
-  providers: []
+  providers: [LayoutService]
 })
 export class LayoutModule {}
