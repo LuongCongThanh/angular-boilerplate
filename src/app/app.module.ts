@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LayoutModule } from '@layout/layout.module';
 import { AuthenModule } from '@feature/authen/authen.module';
+import { CardModule } from 'primeng/card';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +21,8 @@ import { AuthenModule } from '@feature/authen/authen.module';
     RouterModule,
     AppRoutingModule,
     LayoutModule,
-    AuthenModule
+    AuthenModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
