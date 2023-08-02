@@ -8,7 +8,7 @@
     "build:dev": "ng build --configuration=development",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "npx eslint 'src/**/*.{js,ts,html,css,scss}' --quiet --fix",
+    "lint": "npx eslint 'src/**/*.{js,ts,html,scss}' --quiet --fix",
     "format": "npx prettier 'src/**/*.{js,ts,html,css,scss}' --write",
     "e2e": "ng e2e"
   },
