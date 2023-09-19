@@ -1,11 +1,22 @@
 {
-  "tabWidth": 2,
-  "useTabs": false,
-  "singleQuote": true,
-  "semi": true,
-  "bracketSpacing": true,
-  "arrowParens": "avoid",
-  "trailingComma": "none",
-  "bracketSameLine": true,
-  "printWidth": 140
+	"singleQuote": true,
+	"trailingComma": "all",
+	"semi": true,
+	"tabWidth": 2,
+	"printWidth": 140,
+	"overrides": [
+		{
+			"files": ["**/*.html"],
+			"options": {
+				"printWidth": 140,
+				"htmlWhitespaceSensitivity": "ignore"
+			}
+		}
+	],
+	"proseWrap": "always",
+	"arrowParens": "avoid",
+	"endOfLine": "auto",
+	"bracketSameLine": true,
+	"bracketSpacing": true,
+	"useTabs": true
 }
