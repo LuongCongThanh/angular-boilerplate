@@ -1,0 +1,66 @@
+input {
+	padding: 0;
+	margin: 0;
+	outline: none;
+}
+
+.form-group {
+	width: 100%;
+	max-width: 100%;
+	padding-bottom: 32px;
+
+	&.form-search {
+		.form-controls {
+			max-width: 624px;
+			margin: 0 auto;
+		}
+	}
+
+	.form-controls {
+		position: relative;
+		display: flex;
+		align-items: center;
+		width: 100%;
+		height: 32px;
+		padding: 4px 10px;
+		border: 1px solid map-get($color, border);
+		border-radius: 5px;
+		background-color: map-get($color, white);
+
+		.form-input {
+			width: 100%;
+			flex: 1;
+			// padding: 4px 0;
+			border: 0;
+		}
+
+		&-prefix,
+		&-suffix {
+			display: inline-flex;
+			align-items: center;
+		}
+		&-prefix {
+			padding-right: 12px;
+		}
+		&-suffix {
+			padding-left: 12px;
+		}
+
+		&-errors {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			font-size: 13px;
+			color: map-get($color, error);
+			white-space: pre-wrap;
+		}
+		&-count {
+			padding-left: 12px; // same suffix padding left
+			font-size: 11px;
+		}
+
+		@include respond-above(large) {
+			height: 34px;
+		}
+	}
+}
