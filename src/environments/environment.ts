@@ -1,11 +1,11 @@
 const domain = {
-  root: ''
+	root: '',
 };
 
 export const environment = {
-  production: false,
-  app: {
-    root: `${domain.root}/`,
-    auth: `${domain.root}/auth`
-  }
+	production: false,
+	app: {
+		root: `${domain.root}/`,
+		auth: `${domain.root}/auth`,
+	},
 };

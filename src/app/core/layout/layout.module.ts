@@ -7,9 +7,9 @@ import { PrimaryLayoutComponent } from './primary-layout/primary-layout.componen
 import { LayoutService } from '@core/service/layout/layout.service';
 
 @NgModule({
-  declarations: [MainLayoutComponent, PrimaryLayoutComponent],
-  imports: [CommonModule, RouterModule],
-  exports: [],
-  providers: [LayoutService]
+	declarations: [MainLayoutComponent, PrimaryLayoutComponent],
+	imports: [CommonModule, RouterModule],
+	exports: [],
+	providers: [LayoutService],
 })
 export class LayoutModule {}
