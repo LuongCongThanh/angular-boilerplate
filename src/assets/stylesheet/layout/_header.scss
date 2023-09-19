@@ -1,0 +1,215 @@
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 15.55556vw;
+	background-color: map-get($color, white);
+	border-bottom: 2px solid map-get($color, yellow);
+	z-index: 10;
+	font-family: $font-header-footer;
+
+	.header-content {
+		@extend .px-2;
+		width: 100%;
+		height: 100%;
+		@include flex(space-between, center);
+	}
+
+	.header-logo {
+		display: block;
+		// height: 44px;
+		margin-left: -10px;
+		width: 44.44444vw;
+		height: 11.11111vw;
+	}
+
+	.header-overlay {
+		height: 100%;
+		background-color: transparent;
+		transition: background-color 0.1s linear;
+
+		&.show {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(255, 255, 255, 0.7);
+			display: flex;
+			justify-content: flex-end;
+
+			.sidebar {
+				transform: translate(0);
+				transition: transform 0.2s linear;
+			}
+		}
+	}
+
+	.nick-name {
+		padding: 4px 20px;
+		color: map-get($color, strong-blue);
+		text-align: end;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		font-size: 4.22222vw;
+	}
+
+	.sidebar {
+		width: 80vw;
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		background-color: map-get($color, white);
+		box-shadow: -3px 0 6px rgba(0, 0, 0, 0.25);
+		transform: translate(118%);
+		transition: transform 0.1s linear;
+	}
+
+	.time {
+		color: #555;
+		font-size: 10px;
+	}
+
+	.sidebar-toggle {
+		@include flex(center, center);
+		height: auto;
+		position: absolute;
+		top: 1.22rem;
+		right: 100%;
+		background-color: map-get($color, primary);
+		border-radius: 0;
+	}
+
+	.sidebar-container {
+		height: 100%;
+		overflow: auto;
+	}
+
+	.sidebar-header {
+		@include flex(center, center);
+		padding: 30px 16px 0 16px;
+		text-align: center;
+		flex-direction: column;
+	}
+
+	.sidebar-header-content {
+		padding: 2.22222vw 1.66667vw 8.88889vw;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.sidebar-header-action {
+		width: 100%;
+		padding-bottom: 24px;
+		font-size: 16px;
+
+		.btn {
+			height: 48px;
+			font-weight: map-get($font-weight, bold);
+			font-size: 3.55556vw;
+		}
+	}
+
+	.username {
+		font-size: 2rem;
+		color: map-get($color, primary);
+	}
+
+	.sidebar-footer {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.icon-toggle {
+		height: 3rem;
+		width: 3rem;
+		padding: 8px;
+	}
+
+	.icon-hamburger {
+		font-size: 2rem;
+	}
+
+	.menu-list {
+		display: flex;
+		flex-wrap: wrap;
+		border-top: 1px solid map-get($color, border);
+	}
+
+	.menu-item {
+		width: 100%;
+		text-align: center;
+		border-bottom: 1px solid map-get($color, border);
+	}
+
+	.menu-item-unlink {
+		border-bottom: 0;
+	}
+
+	.menu-link {
+		display: flex;
+		padding: 16px;
+		justify-content: center;
+
+		&.active {
+			color: map-get($color, primary);
+		}
+	}
+
+	.header-right {
+		@include flex(flex-end, center);
+		width: 50%;
+	}
+
+	//Responsive 1024
+	@include respond-above(small) {
+		height: $header-height;
+		.header-logo {
+			width: 240px;
+			height: 60px;
+		}
+
+		.time {
+			font-size: 12px;
+		}
+		.sidebar {
+			width: 460px;
+		}
+		.sidebar-header-content {
+			padding: 10px 15px 80px;
+		}
+		.sidebar-header-action {
+			padding: 0 32px 24px;
+
+			.btn {
+				font-size: 16px;
+			}
+		}
+		.sidebar-toggle {
+			top: 12px;
+		}
+		.username {
+			font-size: 28px;
+		}
+
+		.nick-name {
+			font-size: 16px;
+		}
+		.menu-item {
+			width: 50%;
+			&:nth-child(2n + 1) {
+				border-right: 1px solid map-get($color, border);
+			}
+		}
+		.menu-item-unlink {
+			border-bottom: 1px solid map-get($color, border);
+		}
+		.icon-hamburger {
+			font-size: 35px;
+		}
+	}
+}

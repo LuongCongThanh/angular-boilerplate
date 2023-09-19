@@ -1,0 +1,45 @@
+.footer {
+	@include flex(center, flex-start);
+	flex-direction: column;
+	width: 100%;
+	// min-height: $footer-height;
+	padding: 1.5rem;
+	font-family: $font-header-footer;
+	background-color: map-get($color, black);
+	margin-top: auto;
+
+	&-content {
+		line-height: 1.4;
+		color: map-get($color, gray-medium);
+		white-space: pre-wrap;
+		text-align: left;
+		font-size: 0.8rem;
+
+		a {
+			text-decoration: underline;
+			color: map-get($color, white);
+		}
+	}
+
+	&-logo {
+		width: 7.5rem;
+		height: 1.4rem;
+		margin-bottom: 0.5rem;
+		// height: 19px;
+	}
+
+	@include respond-above(small) {
+		@include flex(center, center);
+		padding: 24px;
+		flex-direction: row;
+
+		// Fix for above mobile screen of safari
+		&-content {
+			white-space: pre;
+		}
+
+		&-logo {
+			margin-bottom: 0;
+		}
+	}
+}
