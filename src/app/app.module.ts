@@ -4,11 +4,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { AdministrationModule } from '@feature/administration/administration.module';
+import { AuthenticationModule } from '@feature/authentication/authentication.module';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LayoutModule } from '@layout/layout.module';
-import { AuthenModule } from '@feature/authen/authen.module';
 import { CardModule } from 'primeng/card';
 
 @NgModule({
@@ -20,9 +21,13 @@ import { CardModule } from 'primeng/card';
 		HttpClientModule,
 		RouterModule,
 		AppRoutingModule,
+
 		LayoutModule,
-		AuthenModule,
+
 		CardModule,
+
+		AuthenticationModule,
+		AdministrationModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],
