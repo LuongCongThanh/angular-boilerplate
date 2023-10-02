@@ -7,7 +7,7 @@ const routes: Routes = [
 	{
 		path: 'auth',
 		component: PrimaryLayoutComponent,
-		loadChildren: () => import('./feature/authen/authen.module').then(m => m.AuthenModule),
+		loadChildren: () => import('@feature/authentication/authentication.module').then(m => m.AuthenModule),
 	},
 	// {
 	//   path: 'admin',
