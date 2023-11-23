@@ -2,13 +2,23 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
+// Import các module từ ứng dụng của bạn
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LayoutModule } from '@layout/layout.module';
-import { AuthenModule } from '@feature/authen/authen.module';
+
+// Import các module từ các tính năng (feature modules)
+
+// Import các module từ bên ngoài
+import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+export function createTranslateLoader(http: HttpClient) {
+	return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
+}
 
 @NgModule({
 	declarations: [AppComponent],
@@ -19,10 +29,16 @@ import { AuthenModule } from '@feature/authen/authen.module';
 		HttpClientModule,
 		RouterModule,
 		AppRoutingModule,
+		TranslateModule.forRoot({
+			loader: {
+				provide: TranslateLoader,
+				useFactory: createTranslateLoader,
+				deps: [HttpClient],
+			},
+		}),
 		LayoutModule,
-		AuthenModule,
 	],
-	providers: [],
+	providers: [TranslateService],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}

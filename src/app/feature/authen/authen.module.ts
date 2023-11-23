@@ -8,4 +8,4 @@ import { RouterModule } from '@angular/router';
 	declarations: [LoginComponent],
 	imports: [CommonModule, RouterModule, AuthenRoutingModule],
 })
-export class AuthenModule {}
+export class AuthenticationModule {}
