@@ -1,23 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MainLayoutComponent } from '@layout/main-layout/main-layout.component';
 import { PrimaryLayoutComponent } from '@layout/primary-layout/primary-layout.component';
 
 const routes: Routes = [
-	{ path: '', redirectTo: 'admin', pathMatch: 'full' },
+	{ path: '', redirectTo: 'auth', pathMatch: 'full' },
 	{
 		path: 'auth',
 		component: PrimaryLayoutComponent,
-		loadChildren: () => import('./feature/authentication/authentication.module').then(m => m.AuthenticationModule),
+		loadChildren: () => import('./feature/authen/authen.module').then(m => m.AuthenModule),
 	},
-	{
-		path: 'admin',
-		component: MainLayoutComponent,
-		loadChildren: () => import('./feature/administration/administration.module').then(m => m.AdministrationModule),
-		// canActivate: [AuthGuard],
-		// data: { breadcrumb: 'Admin' },
-	},
-	// { path: '**', redirectTo: 'page-not-found' },
+	// {
+	//   path: 'admin',
+	//   component: MainLayoutComponent,
+	//   loadChildren: () => import('./feature/admin/admin.module').then(m => m.AdminModule),
+	//   canActivate: [AuthGuard],
+	//   data: { breadcrumb: 'Admin' }
+	// }
+	// {path: '**', redirectTo: 'page-not-found'}
 ];
 
 @NgModule({
